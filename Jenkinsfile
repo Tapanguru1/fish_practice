@@ -13,7 +13,7 @@ pipeline {
     }
      stage('Test') {
       steps {
-        sh 'http://localhost:8008/'
+        sh 'curl http://localhost:8008/'
       }
     }
   }
