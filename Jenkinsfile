@@ -19,12 +19,12 @@ pipeline {
             }
     stage('Build') {
       steps {
-        sh "docker build tapan1 ."
+        sh "docker build -t fastapi:v1 ."
       }
     }
     stage('Run') {
       steps {
-        sh "docker run -d -p 8008:8008 tapan1"
+        sh "docker run -d -p 8008:8008 --name fastapiapp23 fastapi:v1"
       }
     }
      stage('Test') {
