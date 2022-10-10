@@ -1,6 +1,22 @@
 pipeline {
   agent any 
   stages {
+   stage('Clone Source Repository') {
+                /* Cloning the repository for web application */
+                steps {
+                    checkout scm
+                }
+            }
+        stage('Verify The Clone') {
+                steps{
+                    sh 'ls'
+                }
+            }
+            stage('Verify The Steps') {
+                steps{
+                    sh 'cat Jenkinsfile'
+                }
+            }
     stage('Build') {
       steps {
         sh "docker build tapan1 ."
