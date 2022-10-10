@@ -16,3 +16,5 @@ pipeline {
         sh 'curl http://localhost:8008/'
       }
     }
+  }
+}
