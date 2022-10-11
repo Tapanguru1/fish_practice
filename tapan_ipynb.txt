@@ -1,0 +1,17 @@
+import pandas as pd
+import sqlite3
+
+
+conn = sqlite3.connect('product.db')
+c = conn.cursor()
+
+
+from Database.database import engine
+
+
+db = engine
+
+
+sql = "SELECT * FROM fish2;"
+df_fish = pd.read_sql_query(sql, db).set_index('id')
+df_fish.head()
